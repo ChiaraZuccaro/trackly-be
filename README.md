@@ -25,7 +25,7 @@ cd trackly-backend
 ```
 
 ### 2️⃣ Create a .env file in the project root
-### .env file (do NOT commit this file)
+.env file (do NOT commit this file)
 ```bash
 DB_HOST=localhost
 DB_PORT=5432
@@ -63,14 +63,15 @@ docker run --name trackly-db -e POSTGRES_DB=trackly \
 ## 🔐 Google OAuth2 Configuration
 ### Steps for Google OAuth2 setup:
 
-### 1. Go to Google Cloud Console -> APIs & Services -> Credentials
-### 2. Create an OAuth 2.0 Client ID
-### 3. Add an authorized redirect URI:
-###    http://localhost:8080/login/oauth2/code/google
-### 4. Copy your Client ID and Client Secret into the .env file:
+1. Go to Google Cloud Console -> APIs & Services -> Credentials
+2. Create an OAuth 2.0 Client ID
+3. Add an authorized redirect URI:
+   http://localhost:8080/login/oauth2/code/google
+4. Copy your Client ID and Client Secret into the .env file:
+```bash
 GOOGLE_CLIENT_ID=your_client_id
 GOOGLE_CLIENT_SECRET=your_client_secret
-
+```
 
 ## 🧩 Configuration in application.properties
 ```bash
@@ -86,6 +87,6 @@ spring.security.oauth2.client.registration.google.scope=email,profile
 
 
 ## ⚠️ Security Notes
-### Never commit files containing real passwords, client secrets, or tokens.
-### Always store credentials in environment variables or secret managers.
-### Rotate your keys if they have ever been committed.
+Never commit files containing real passwords, client secrets, or tokens.
+Always store credentials in environment variables or secret managers.
+Rotate your keys if they have ever been committed.
